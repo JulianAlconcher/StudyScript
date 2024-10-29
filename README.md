@@ -44,7 +44,7 @@ If Python is not already in your environment variables, you’ll need to add it:
 
 ### 3. Show Files for a Subject
 - **Command**: `study "subject_name" files`
-- **Description**: Displays a list of all files and URLs associated with the specified subject, allowing users to modify or delete them.
+- **Description**: Displays a list of all files and URLs associated with the specified subject, allowing users to add a new file, modify or delete them.
 
 ### 4. Add a New File
 - **Command**: `study "subject_name" add`

@@ -57,7 +57,7 @@ If Python is not already in your environment variables, you’ll need to add it:
 ## Modify Files and Subjects 🤙🤙
 If you want to quickly modify all the files and subjects, you can do so directly in the `materias_config.json` file. Open the file with a text editor and make your changes as needed.
 
-# ScreenShots 🔽
+## ScreenShots 🔽
 
 ![Screenshot 2024-10-29 142533](https://github.com/user-attachments/assets/ba9cf0e5-ac0f-4cab-8c87-a63ab9e91697)
 ![image](https://github.com/user-attachments/assets/736d2188-0209-45fa-a5db-bd5293a5efe7)

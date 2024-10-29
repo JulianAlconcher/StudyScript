@@ -54,3 +54,6 @@ If Python is not already in your environment variables, you’ll need to add it:
 - **Command**: Type `exit` when prompted.
 - **Description**: Exits the current operation and returns to the previous menu or closes the application.
 
+## Modify Files and Subjects 🤙🤙
+If you want to quickly modify all the files and subjects, you can do so directly in the `materias_config.json` file. Open the file with a text editor and make your changes as needed.
+

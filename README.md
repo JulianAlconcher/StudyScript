@@ -6,7 +6,7 @@ Study Files Bot is a command-line application designed to help students efficien
 
 The project is primarily aimed at university students who want to streamline their study processes by quickly accessing digital resources related to their coursework.
 
-# Setup Instructions 🛠 🔽 🔽
+# Setup Instructions 🛠 
 
 ### 1. Download and Configure
 - Download the project files to your local machine.

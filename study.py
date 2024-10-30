@@ -13,6 +13,23 @@ if os.path.exists(config_path):
         materias_config = json.load(file)
 else:
     materias_config = {}
+    
+def mostrar_ayuda():
+    """Displays available commands and how to use them."""
+    print("\nStudy Script Help")
+    print("-" * 50)
+    print("Usage:")
+    print("  study <subject>           Opens the files associated with the subject.")
+    print("  study list                Lists all available subjects.")
+    print("  study <subject> files     Displays files associated with a subject.")
+    print("  study <subject> add       Adds a new file to the specified subject.")
+    print("  study help                Shows this help message.")
+    print("\nExamples:")
+    print("  study 'pss'               Opens all files for 'pss'.")
+    print("  study list                Shows all registered subjects.")
+    print("  study 'pss' files         Lists all files associated with 'pss' and allows modification.")
+    print("  study 'pss' add           Prompts to add a new file or URL for 'pss'.")
+    print("-" * 50)
 
 def listar_materias():
     """Lists all available subjects in the configuration file."""
@@ -27,7 +44,7 @@ def abrir_materia(materia):
     """Opens the files and links associated with a specific subject in the browser."""
     if materia in materias_config:
         archivos = materias_config[materia]
-        docs_files = [moodle_url, chatgpt_url] 
+        docs_files = [moodle_url, chatgpt_url]
         other_files = []
 
         for archivo in archivos:
@@ -68,7 +85,6 @@ def abrir_materia(materia):
                 subprocess.Popen([chrome_path, "--new-window", "--window-position=0,0"] + other_files_urls)
         except KeyboardInterrupt:
             print("\nOperation canceled. Exiting...")
-            return 
 
 def mostrar_archivos_materia(materia):
     """Displays the files and links associated with a subject in the console, allowing them to be modified or deleted."""
@@ -171,7 +187,10 @@ def agregar_archivo_materia(materia):
 if len(sys.argv) > 1:
     command = sys.argv[1].strip().lower()
     
-    if command == "list":
+    if command == "help":
+        mostrar_ayuda()
+    
+    elif command == "list":
         listar_materias()
     
     elif len(sys.argv) > 2 and sys.argv[2].strip().lower() == "files":
@@ -185,4 +204,4 @@ if len(sys.argv) > 1:
     else:
         abrir_materia(command)
 else:
-    print("Please specify the subject. Example: study 'pss', 'study list' to see all subjects or 'study 'subject' files' to see the files or 'study 'subject' add' to add a file.")
+    print("Please specify the subject. Example: study 'pss', 'study list' to see all subjects or 'study help' for a list of commands.")

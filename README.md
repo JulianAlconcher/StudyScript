@@ -50,7 +50,11 @@ If Python is not already in your environment variables, you’ll need to add it:
 - **Command**: `study "subject_name" add`
 - **Description**: Prompts the user to enter a new file or URL to add to the specified subject. The new file will be saved in the configuration file.
 
-### 5. Exit the Application
+### 5. Help Command
+- **Command**: study help
+- **Description**: Displays a list of all available commands, along with their descriptions and usage examples.
+
+### 6. Exit the Application
 - **Command**: Type `exit` when prompted.
 - **Description**: Exits the current operation and returns to the previous menu or closes the application.
 

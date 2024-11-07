@@ -184,6 +184,25 @@ def agregar_archivo_materia(materia):
     else:
         print(f"No subject found for '{materia}'. Please add the subject first.")
 
+def agregar_carpeta_materia(materia, folder_path):
+    """Adds all files in a folder to the specified subject."""
+    if not os.path.isdir(folder_path):
+        print("The specified path is not a valid folder.")
+        return
+    
+    archivos_en_carpeta = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+    
+    if materia not in materias_config:
+        materias_config[materia] = []
+    
+    materias_config[materia].extend(archivos_en_carpeta)
+
+    with open(config_path, "w") as file:
+        json.dump(materias_config, file)
+    
+    print(f"Files from '{folder_path}' successfully added to '{materia}'.")
+    sys.exit(0)  # Stop execution after adding the folder
+
 if len(sys.argv) > 1:
     command = sys.argv[1].strip().lower()
     
@@ -197,9 +216,15 @@ if len(sys.argv) > 1:
         materia = command
         mostrar_archivos_materia(materia)
 
-    elif len(sys.argv) > 2 and sys.argv[2].strip().lower() == "add":
-        materia = command
-        agregar_archivo_materia(materia)
+    elif len(sys.argv) > 2 and sys.argv[2].strip().lower() == "add" and len(sys.argv) > 3 and sys.argv[3].strip().lower() == "-f":
+            # Add folder to the subject
+            materia = command
+            try:
+                folder_path = input("Enter the full path of the folder: ").strip()
+                agregar_carpeta_materia(materia, folder_path)
+            except KeyboardInterrupt:
+                print("\nFinishing process")
+                sys.exit(0)
 
     else:
         abrir_materia(command)

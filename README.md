@@ -46,9 +46,12 @@ If Python is not already in your environment variables, you’ll need to add it:
 - **Command**: `study "subject_name" files`
 - **Description**: Displays a list of all files and URLs associated with the specified subject, allowing users to add a new file, modify or delete them.
 
-### 4. Add a New File
+### 4. Add a New File or Folder
 - **Command**: `study "subject_name" add`
 - **Description**: Prompts the user to enter a new file or URL to add to the specified subject. The new file will be saved in the configuration file.
+
+- **Command**: `study "subject_name" add -f`
+- **Description**: Prompts the user to enter a new folder to add to the specified subject. The new folder will be saved in the configuration file.
 
 ### 5. Help Command
 - **Command**: `study help`

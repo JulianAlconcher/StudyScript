@@ -51,7 +51,7 @@ If Python is not already in your environment variables, you’ll need to add it:
 - **Description**: Prompts the user to enter a new file or URL to add to the specified subject. The new file will be saved in the configuration file.
 
 ### 5. Help Command
-- **Command**: study help
+- **Command**: `study help`
 - **Description**: Displays a list of all available commands, along with their descriptions and usage examples.
 
 ### 6. Exit the Application
